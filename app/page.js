@@ -277,8 +277,8 @@ export default function Home() {
           </div>
         </div>
         <div className="">
-          <div className=" h-[450px]  absolute top-[135px] p-[20px] right-[80px]  mt-3   w-[900px]">
-            <div className="w-[1000px]  bg-[#F1F4F4] p-[25px] flex  flex-col gap-[25px]">
+          <div className=" h-[450px]  absolute top-[135px] p-[20px] right-[80px]  mt-3 ">
+            <div className="  bg-[#F1F4F4] p-[25px] flex  flex-col gap-[25px]">
               <div className=" justify-center flex items-center gap-[20px] ">
                 {state.columnOrder.map((columnId) => {
                   const column = state.columns[columnId];
@@ -360,13 +360,13 @@ const initialData = {
       taskIds: [],
       taskNum: "32",
     },
-    // "column-4": {
-    //   id: "column-4",
-    //   title: "DONE",
-    //   taskIds: [],
-    //   taskNum: "12",
-    // },
+    "column-4": {
+      id: "column-4",
+      title: "DONE",
+      taskIds: [],
+      taskNum: "12",
+    },
   },
 
-  columnOrder: ["column-1", "column-2", "column-3"],
+  columnOrder: ["column-1", "column-2", "column-3", "column-4"],
 };

@@ -5,7 +5,7 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 
 export default function BackLogItems({ column, tasks }) {
   return (
-    <div className="w-[280px] bg-white h-[450px] rounded p-4">
+    <div className="w-[280px] bg-white h-[500px] rounded p-4">
       <div>
         <div className="flex flex-row justify-between p-[10px]">
           <div className="flex flex-row items-center gap-[10px]">
