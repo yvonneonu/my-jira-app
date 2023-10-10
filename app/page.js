@@ -72,7 +72,12 @@ export default function Home() {
     console.log("Drag end:", result);
 
     const { destination, source } = result;
-    if (!destination) return;
+
+    // Check if the destination is null, indicating the drop was not successful
+    if (destination === null) {
+      return;
+    }
+
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
@@ -123,6 +128,8 @@ export default function Home() {
     };
     setState(newState);
   };
+
+  ///position of the drop
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -279,7 +286,7 @@ export default function Home() {
         <div className="">
           <div className=" h-[450px]  absolute top-[135px] p-[20px] right-[80px]  mt-3 ">
             <div className="  bg-[#F1F4F4] p-[25px] flex  flex-col gap-[25px]">
-              <div className=" justify-center flex items-center gap-[20px] ">
+              <div className=" flex items-center gap-[20px] max-w-[1000px] overflow-x-auto">
                 {state.columnOrder.map((columnId) => {
                   const column = state.columns[columnId];
                   const tasks = column.taskIds.map(
@@ -366,7 +373,14 @@ const initialData = {
       taskIds: [],
       taskNum: "12",
     },
+
+    "column-5": {
+      id: "column-5",
+      title: "Backlog",
+      taskIds: [],
+      taskNum: "42",
+    },
   },
 
-  columnOrder: ["column-1", "column-2", "column-3", "column-4"],
+  columnOrder: ["column-1", "column-2", "column-3", "column-4", "column-5"],
 };
