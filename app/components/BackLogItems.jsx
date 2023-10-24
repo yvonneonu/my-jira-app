@@ -5,7 +5,7 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 
 export default function BackLogItems({ column, tasks }) {
   return (
-    <div className="min-w-[300px] bg-white h-[500px] rounded p-4">
+    <div className="min-w-[350px] bg-white h-[500px] rounded p-4">
       <div>
         <div className="flex flex-row justify-between p-[10px]">
           <div className="flex flex-row items-center gap-[10px]">
@@ -41,7 +41,7 @@ export default function BackLogItems({ column, tasks }) {
                     : "transparent";
 
                   const boxShadow = draggableSnapshot.isDragging
-                    ? "0 5px 10px rgba(0, 0, 0, 0.6)"
+                    ? "drop-shadow"
                     : "unset";
 
                   return (
@@ -54,7 +54,7 @@ export default function BackLogItems({ column, tasks }) {
                       {...draggableProvided.draggableProps}
                       {...draggableProvided.dragHandleProps}
                     >
-                      <div className="w-[90%] gap-[16px] flex flex-col bg-white rounded border border-sky-950 border-opacity-5 p-[10px]">
+                      <div className="w-[90%] hover:drop-shadow-lg shadow-sm gap-[16px] flex flex-col bg-white rounded border border-black border-opacity-5 p-[10px]">
                         <div className="w-[218px] text-slate-600 text-[13px] font-medium">
                           {task?.description}
                         </div>
